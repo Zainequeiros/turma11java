@@ -23,6 +23,7 @@ public class Lista1Exercicio6 {
 		
 		System.out.println("A distância entre os 2 pontos é: " + d);
 
+		leia.close();
 	}
 
 }

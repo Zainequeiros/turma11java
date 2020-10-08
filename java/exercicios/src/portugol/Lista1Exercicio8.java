@@ -16,6 +16,6 @@ public class Lista1Exercicio8 {
 		
 		System.out.println("O valor do carro novo é: " + carroNovo);
 
+		leia.close();
 	}
-
 }

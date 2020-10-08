@@ -7,7 +7,7 @@ public class Lista1Exercicio7 {
 	public static void main(String[] args) {
 		
 		Scanner leia = new Scanner(System.in); 
-		int ano , meses , dias, totalDias=0;
+		int ano , meses , dias = 0, totalDias=0;
 		
 		System.out.println("Informe quantos anos, meses e dias de vida você tem");
 		

@@ -22,7 +22,7 @@ public class Lista1Exercicio4 {
 		
 		System.out.println("O valor de d é: "+ d);
 		
-
+		leia.close();
 	}
 
 }

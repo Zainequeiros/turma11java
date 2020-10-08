@@ -22,6 +22,7 @@ public class Lista1Exercicio5 {
 		notaFinal = (nota1+nota2+nota3)/10;
 		System.out.println("A média final é: " + notaFinal);
 
+		leia.close();
 	}
 
 }
