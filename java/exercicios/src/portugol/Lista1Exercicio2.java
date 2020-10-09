@@ -2,22 +2,24 @@ package portugol;
 
 import java.util.Scanner;
 
+//Faça um sistema que leia a idade de uma pessoa expressa em dias e mostre-a expressa em anos, meses e dias
+
 public class Lista1Exercicio2 {
 	
 	public static void main(String[] args) {
 		
 		Scanner leia = new Scanner(System.in);
 		
-		int diaAniversario, idadeEmAnos, idadeEmMes, idadeEmDias;
+		int idadeDias, idadeEmAnos, idadeEmMeses, idadeEmDias;
 		
 		System.out.print("Digite sua idade em dias: ");
-		diaAniversario = leia.nextInt();
+		idadeDias = leia.nextInt();
 		
-		idadeEmAnos = (diaAniversario / 365);
-		idadeEmMes = ((diaAniversario % 365) / 30);
-		idadeEmDias = ((diaAniversario % 365) % 30);
+		idadeEmAnos = (idadeDias / 365);
+		idadeEmMeses = ((idadeDias % 365) / 30);
+		idadeEmDias = ((idadeDias % 365) % 30);
 		
-		System.out.println("Você tem " + idadeEmAnos + " anos, " + idadeEmMes + " meses e " + idadeEmDias + " dias");
+		System.out.println("Você tem " + idadeEmAnos + " anos, " + idadeEmMeses + " meses e " + idadeEmDias + " dias");
 		
 		leia.close();
 	}

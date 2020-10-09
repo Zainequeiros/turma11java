@@ -2,11 +2,14 @@ package portugol;
 
 import java.util.*;
 
+//Verificar se a pessoa é menor ou maior de idade(if - else if - else)
+
 public class ExemploCondicional1 {
 
 	public static void main(String[] args) {
 		
 		Scanner leia = new Scanner(System.in);
+		
 		int idade;
 		String nome;
 		
@@ -25,7 +28,6 @@ public class ExemploCondicional1 {
 		} else {
 			System.out.printf("\nVocê digitou um valor inválido!");
 		}
-		
 		leia.close();
 	}
 }

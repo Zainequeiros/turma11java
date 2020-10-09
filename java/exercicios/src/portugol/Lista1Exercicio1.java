@@ -2,34 +2,31 @@ package portugol;
 
 import java.util.Scanner;
 
+//Faça um sistema que leia a idade de uma pessoa expressa em anos, meses e dias e mostre-a expressa apenas em dias
+
 public class Lista1Exercicio1 {
 
-public static void main(String[] args) {
+	public static void main(String[] args) {
 		
-		Scanner tec = new Scanner(System.in);
+		Scanner leia = new Scanner(System.in); 
 		
-		int a,b,c,d,e,f;
-		double x,y;
+		int ano , meses , dias, totalDias=0;
 		
-		System.out.print("Informe o Valor de A: ");
-		a = tec.nextInt();		
-		System.out.print("Informe o Valor de B: ");
-		b = tec.nextInt();
-		System.out.print("Informe o Valor de C: ");
-		c = tec.nextInt();
-		System.out.print("Informe o Valor de D: ");
-		d = tec.nextInt();
-		System.out.print("Informe o Valor de E: ");
-		e = tec.nextInt();
-		System.out.print("Informe o Valor de F: ");
-		f = tec.nextInt();
+		System.out.println("Digite a sua idade em anos, meses e dias");
 		
-		x = ( ( (c*e) - (b*f) ) / ( (a*e) - (b*d) ) );
-		y =  ( ( (a*f) - (c*d) ) / ( (a*e) - (b*d) ) );
-		System.out.printf("O valor de X é: %.02f",x);
-		System.out.println();
-		System.out.printf("O valor de Y é: %.02f",y);
+		System.out.print("Anos: ");
+		ano = leia.nextInt();
 		
-		tec.close();				
-	}	
+		System.out.print("Meses: ");
+		meses = leia.nextInt();
+		
+		System.out.print("Dias: ");
+		dias = leia.nextInt();
+		
+		totalDias = totalDias + (ano*365) + (meses*30);
+		
+		System.out.println("Você tem " + totalDias + " dias");
+		
+		leia.close();
+	}
 }

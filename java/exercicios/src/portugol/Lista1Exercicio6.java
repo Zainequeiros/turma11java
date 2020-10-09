@@ -2,9 +2,12 @@ package portugol;
 
 import java.util.Scanner;
 
+//Construa um programa em c que, tendo como dados de entrada dois pontos quaisquer no plano, P(x1, y1) e P(x2, y2), escreva a distância entre eles. A fórmula que efetua tal cálculo é: d = raiz quadrada((x2-x1)²+(y2-y1)²)
+
 public class Lista1Exercicio6 {
 
 	public static void main(String[] args) {
+		
 		Scanner leia = new Scanner(System.in);
 		
 		int x1 = 0, x2 = 2, y1 = 0, y2 = 0;

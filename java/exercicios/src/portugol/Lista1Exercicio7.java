@@ -2,32 +2,37 @@ package portugol;
 
 import java.util.Scanner;
 
+//Um sistema de equações lineares do tipo: ax+by=c, pode ser resolvido segundo mostrado aqui: x=(ce-bf)/(ae-bd). Escreva um sistema que lê os coeficientes a,b,c,d,e e f e calcula e mostra os valores de x e y
+
 public class Lista1Exercicio7 {
 
 	public static void main(String[] args) {
 		
-		Scanner leia = new Scanner(System.in); 
-		int ano , meses , dias = 0, totalDias=0;
+		Scanner tec = new Scanner(System.in);
 		
-		System.out.println("Informe quantos anos, meses e dias de vida você tem");
+		int a,b,c,d,e,f;
+		double x,y;
 		
-		System.out.print("Anos: ");
-		ano = leia.nextInt();
+		System.out.print("Informe o Valor de A: ");
+		a = tec.nextInt();		
+		System.out.print("Informe o Valor de B: ");
+		b = tec.nextInt();
+		System.out.print("Informe o Valor de C: ");
+		c = tec.nextInt();
+		System.out.print("Informe o Valor de D: ");
+		d = tec.nextInt();
+		System.out.print("Informe o Valor de E: ");
+		e = tec.nextInt();
+		System.out.print("Informe o Valor de F: ");
+		f = tec.nextInt();
 		
-		System.out.print("Meses: ");
-		meses = leia.nextInt();
+		x = ( ( (c*e) - (b*f) ) / ( (a*e) - (b*d) ) );
+		y =  ( ( (a*f) - (c*d) ) / ( (a*e) - (b*d) ) );
 		
-		System.out.print("Dias: ");
-		dias = leia.nextInt();
+		System.out.printf("O valor de X é: %.02f",x);
+		System.out.println();
+		System.out.printf("O valor de Y é: %.02f",y);
 		
-		totalDias = totalDias + (ano*365) + (meses*30);
-		
-		System.out.println("Você tem " + totalDias + " dias");
-		
-		leia.close();
-
-
-
+		tec.close();
 	}
-
 }

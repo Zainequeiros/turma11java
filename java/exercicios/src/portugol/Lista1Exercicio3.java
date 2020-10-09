@@ -2,14 +2,17 @@ package portugol;
 
 import java.util.Scanner;
 
+//Faça um sistema que leia o tempo de duração de um evento em uma fábrica expressa em segundos e mostre-o expresso em horas, minutos e segundos
+
 public class Lista1Exercicio3 {
 	
 	public static void main(String[] args) {
 		
 		Scanner leia = new Scanner(System.in);
+		
 		int tempoDuracao, segundos, minutos,horas;
 		
-		System.out.print("Escreva o tempo de duração do envento na fábrica em segundos: ");
+		System.out.print("Escreva o tempo de duração do evento na fábrica em segundos: ");
 		tempoDuracao = leia.nextInt();
 		
 		horas = tempoDuracao / 3600;
