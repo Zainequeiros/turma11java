@@ -31,7 +31,7 @@ public class Dvd extends Produtos {
 	//método
 	public void catalDvd (List<Dvd> lista) {
 		for (Dvd catalogo : lista) {
-			System.out.println(catalogo.getTitulo() + catalogo.getGenero() + catalogo.getValor() + catalogo.getTitulo());
+			System.out.println("[ Título: " + catalogo.getTitulo() + " ] [ Gênero: " + catalogo.getGenero() + " ] [ Valor: R$" + catalogo.getValor() + " ] [ Artista: " + catalogo.getTitulo() + " ]");
 		}
 	}
 }

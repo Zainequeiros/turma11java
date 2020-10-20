@@ -31,7 +31,7 @@ public class Cd extends Produtos {
 	//método
 	public void catalCd (List<Cd> lista) {
 		for (Cd catalogo : lista) {
-			System.out.println(catalogo.getTitulo() + catalogo.getGenero() + catalogo.getValor() + catalogo.getArtista());
+			System.out.println("[ Título: " + catalogo.getTitulo() + " ] [ Gênero: " + catalogo.getGenero() + " ] [ Valor: R$" + catalogo.getValor() + " ] [ Artista: " + catalogo.getArtista() + " ]");
 		}
 	}
 }

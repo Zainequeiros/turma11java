@@ -31,7 +31,7 @@ public class Livros extends Produtos {
 	//método
 	public void catalLivro (List<Livros> lista) {
 		for (Livros catalogo : lista) {
-			System.out.println(catalogo.getTitulo() + catalogo.getGenero() + catalogo.getValor() + catalogo.getAutor());
+			System.out.println("[ Título: " + catalogo.getTitulo() + " ] [ Gênero: " + catalogo.getGenero() + " ] [ Valor: R$" + catalogo.getValor() + " ] [ Artista: " + catalogo.getAutor() + " ]");
 		}
 	}
 }

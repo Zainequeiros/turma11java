@@ -13,7 +13,7 @@ public class Zahraiva {
 	
 	public static void limpaTela() {
 		try {
-			Thread.sleep(2000);
+			Thread.sleep(1500);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
@@ -26,7 +26,8 @@ public class Zahraiva {
 		
 		String titulo = "", genero= "", autor = "", tipo = "", artista = "";
 		double valor = 0;
-		char opcInicial, opcTipoProd, tipoDvd, opcCatalogo, opcCadastro, opcConsulta;
+		char opcInicial = 0, opcTipoProd, tipoDvd, opcCatalogo, opcCadastro, opcConsulta;
+		boolean volta = false;
 		
 		System.out.print("   _   _   _   _   _   _   _   _  \r\n"
 				+ "");
@@ -43,14 +44,30 @@ public class Zahraiva {
 		List<Dvd> listaDvd = new ArrayList<>();
 		List<Livros> listaLivros = new ArrayList<>();
 		
-			System.out.println("O que deseja fazer? \n1 - Cadastrar novo produto \n2 - Exibir catálogo ");
-			opcInicial = leia.next().charAt(0);
+		listaCd.add(new Cd("Vesúvio", "MPB", 12.00, "Djavan"));
+		listaCd.add(new Cd("Farewell Song", "Rock", 14.00, "Janis Joplin"));
+		listaCd.add(new Cd("Ao Vivo na Ilha da Magia", "Pagode", 16.00, "Exaltasamba"));
+		listaDvd.add(new Dvd("Turnê 7 Vidas", "Musical", 18.00, "Show"));
+		listaDvd.add(new Dvd("Box House MD", "Drama", 189.99, "Série"));
+		listaDvd.add(new Dvd("Na Natureza Selvagem", "Aventura", 25.00, "Filme"));
+		listaLivros.add(new Livros("Dexter", "Suspense", 49.90, "Jeff Lindsay"));
+		listaLivros.add(new Livros("Os Sete", "Terror", 50.90, "André Vianco"));
+		listaLivros.add(new Livros("Deadpool Dog Park", "Ficção", 37.00, "Stefan Petrucha"));
 		
+		do {
+			if(!volta) {
+				System.out.println("O que deseja fazer? \n1 - Cadastrar novo produto \n2 - Exibir catálogo \n3 - Sair do Sistema");
+				opcInicial = leia.next().charAt(0);
+			}
+				
 			limpaTela();
-		
+			
 			if(opcInicial == '1') {
 				System.out.println("Qual item você quer cadastrar? \n1 - CD \n2 - DVD \n3 - Livro ");
 				opcTipoProd = leia.next().charAt(0);
+				
+				limpaTela();
+				
 				if(opcTipoProd == '1') {
 					System.out.println("Digite o nome do CD: ");
 					titulo = leia.next();
@@ -93,43 +110,65 @@ public class Zahraiva {
 				} else {
 					System.out.println("Você digitou uma opção inválida");
 				}
+				
+				limpaTela();
+				
 				System.out.println("Deseja cadastrar um novo produto? \n1 - Sim \n2 - Não ");
 				opcCadastro = leia.next().charAt(0);
 				if(opcCadastro == '1') {
-					
+					volta = true;
 				} else if (opcCadastro == '2') {
-					System.out.println("Obrigade :)");
+					System.out.println("\nObrigade :)");
+					volta = false;
 				} else {
 					System.out.println("Você digitou uma opção inválida");
+					volta = false;
 				}
+				
+				limpaTela();
 			}
 			
 			else if (opcInicial == '2') {
 				System.out.println("O catálogo de qual produto você quer consultar? \n1 - CD \n2 - DVD \n3 - Livro ");
 				opcCatalogo = leia.next().charAt(0);
+				
+				limpaTela();
+				
 				if(opcCatalogo == '1') {
 					Cd catalogoCd = new Cd(titulo, genero, valor, artista);
 					catalogoCd.catalCd(listaCd);
 				} else if(opcCatalogo == '2') {
 					Dvd catalogoDvd = new Dvd(titulo, genero, valor, tipo);
 					catalogoDvd.catalDvd(listaDvd);
-				} else if(opcCatalogo == '2') {
+				} else if(opcCatalogo == '3') {
 					Livros catalogoLivros = new Livros(titulo, genero, valor, autor);
 					catalogoLivros.catalLivro(listaLivros);
 				} else {
 					System.out.println("Você digitou uma opção inválida");
 				}
-				System.out.println("DEseja consultar outro catálogo? \n1 - Sim \n2 - Não ");
+				
+				System.out.println("\n\nDeseja consultar outro catálogo? \n1 - Sim \n2 - Não ");
 				opcConsulta = leia.next().charAt(0);
 				if(opcConsulta == '1') {
-					
+					volta = true;
 				} else if (opcConsulta == '2') {
-					System.out.println("Obrigade :)");
+					System.out.println("\nObrigade :)");
+					volta = false;
 				} else {
 					System.out.println("Você digitou uma opção inválida");
+					volta = false;
 				}
+				
+				limpaTela();
+				
 			}
-			
-		leia.close();
+			else if(opcInicial == '3') {
+				System.out.println("\nObrigade :)");
+				break;
+			} else {
+				System.out.println("Você digitou uma opção inválida");
+				volta = false;
+			}
+		} while(true);
 	}
 }
