@@ -26,7 +26,7 @@ public class Zahraiva {
 		
 		String titulo = "", genero= "", autor = "", tipo = "", artista = "";
 		double valor = 0;
-		char opcInicial, opcTipoProd, tipoDvd, opcCatalogo;
+		char opcInicial, opcTipoProd, tipoDvd, opcCatalogo, opcCadastro, opcConsulta;
 		
 		System.out.print("   _   _   _   _   _   _   _   _  \r\n"
 				+ "");
@@ -39,7 +39,9 @@ public class Zahraiva {
 
 		limpaTela();
 		
-		List<Produtos> lista = new ArrayList<>();
+		List<Cd> listaCd = new ArrayList<>();
+		List<Dvd> listaDvd = new ArrayList<>();
+		List<Livros> listaLivros = new ArrayList<>();
 		
 			System.out.println("O que deseja fazer? \n1 - Cadastrar novo produto \n2 - Exibir catálogo ");
 			opcInicial = leia.next().charAt(0);
@@ -58,7 +60,7 @@ public class Zahraiva {
 					valor = leia.nextDouble();
 					System.out.println("Digite o artista do CD: ");
 					artista = leia.next();
-					lista.add(new Cd(titulo, genero, valor, artista));
+					listaCd.add(new Cd(titulo, genero, valor, artista));
 				} else if(opcTipoProd == '2') {
 					System.out.println("Digite o nome do DVD: ");
 					titulo = leia.next();
@@ -77,7 +79,7 @@ public class Zahraiva {
 					} else {
 						System.out.println("Você digitou uma opção inválida");
 					}
-					lista.add(new Dvd(titulo, genero, valor, tipo));
+					listaDvd.add(new Dvd(titulo, genero, valor, tipo));
 				} else if(opcTipoProd == '3') {
 					System.out.println("Digite o nome do Livro: ");
 					titulo = leia.next();
@@ -87,21 +89,44 @@ public class Zahraiva {
 					valor = leia.nextDouble();
 					System.out.println("Digite o autor do Livro: ");
 					autor = leia.next();
-					lista.add(new Livros(titulo, genero, valor, autor));
+					listaLivros.add(new Livros(titulo, genero, valor, autor));
 				} else {
-					System.out.println("Você digitou uma opção inválida: ");
+					System.out.println("Você digitou uma opção inválida");
 				}
-				System.out.println("Deseja cadastrar um novo produto? \n1 - Sim \n2 - Não");
-				
-			} else if (opcInicial == '2') {
+				System.out.println("Deseja cadastrar um novo produto? \n1 - Sim \n2 - Não ");
+				opcCadastro = leia.next().charAt(0);
+				if(opcCadastro == '1') {
+					
+				} else if (opcCadastro == '2') {
+					System.out.println("Obrigade :)");
+				} else {
+					System.out.println("Você digitou uma opção inválida");
+				}
+			}
+			
+			else if (opcInicial == '2') {
 				System.out.println("O catálogo de qual produto você quer consultar? \n1 - CD \n2 - DVD \n3 - Livro ");
 				opcCatalogo = leia.next().charAt(0);
 				if(opcCatalogo == '1') {
 					Cd catalogoCd = new Cd(titulo, genero, valor, artista);
-					catalogoCd.catalProd();
+					catalogoCd.catalCd(listaCd);
 				} else if(opcCatalogo == '2') {
 					Dvd catalogoDvd = new Dvd(titulo, genero, valor, tipo);
-					catalogoDvd.catalProd();
+					catalogoDvd.catalDvd(listaDvd);
+				} else if(opcCatalogo == '2') {
+					Livros catalogoLivros = new Livros(titulo, genero, valor, autor);
+					catalogoLivros.catalLivro(listaLivros);
+				} else {
+					System.out.println("Você digitou uma opção inválida");
+				}
+				System.out.println("DEseja consultar outro catálogo? \n1 - Sim \n2 - Não ");
+				opcConsulta = leia.next().charAt(0);
+				if(opcConsulta == '1') {
+					
+				} else if (opcConsulta == '2') {
+					System.out.println("Obrigade :)");
+				} else {
+					System.out.println("Você digitou uma opção inválida");
 				}
 			}
 			

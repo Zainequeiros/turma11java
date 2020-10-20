@@ -1,5 +1,7 @@
 package classes;
 
+import java.util.List;
+
 public class Dvd extends Produtos {
 	
 	//atributos
@@ -27,10 +29,9 @@ public class Dvd extends Produtos {
 	}
 	
 	//método
-	@Override
-	public void catalProd () {
+	public void catalDvd (List<Dvd> lista) {
 		for (Dvd catalogo : lista) {
-			System.out.println(super.getTitulo() + super.getGenero() + super.getValor() + catalogo.getTipo());
+			System.out.println(catalogo.getTitulo() + catalogo.getGenero() + catalogo.getValor() + catalogo.getTitulo());
 		}
 	}
 }

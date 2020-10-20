@@ -44,7 +44,4 @@ public abstract class Produtos {
 	public void setValor(double valor) {
 		this.valor = valor;
 	}
-	
-	//método
-	public abstract void catalProd ();
 }

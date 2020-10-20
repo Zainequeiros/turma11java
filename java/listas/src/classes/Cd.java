@@ -1,5 +1,7 @@
 package classes;
 
+import java.util.List;
+
 public class Cd extends Produtos {
 	
 	//atributos
@@ -27,10 +29,9 @@ public class Cd extends Produtos {
 	}
 	
 	//método
-	@Override
-	public void catalProd () {
+	public void catalCd (List<Cd> lista) {
 		for (Cd catalogo : lista) {
-			System.out.println(super.getTitulo() + super.getGenero() + super.getValor() + catalogo.getArtista());
+			System.out.println(catalogo.getTitulo() + catalogo.getGenero() + catalogo.getValor() + catalogo.getArtista());
 		}
 	}
 }
