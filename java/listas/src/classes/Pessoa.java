@@ -3,7 +3,9 @@ package classes;
 public class Pessoa {
 	
 	//atributos
-	private String nome, endereço, telefone;
+	private String nome;
+	private int anoNascimento;
+	private char sexo;
 	
 	//construtor
 	public Pessoa (String nome) {
@@ -11,17 +13,13 @@ public class Pessoa {
 	}
 
 	//sobrecarga
-	public Pessoa(String nome, String endereço) {
+	public Pessoa(String nome, int anoNascimento, char sexo) {
+		super();
 		this.nome = nome;
-		this.endereço = endereço;
+		this.anoNascimento = anoNascimento;
+		this.sexo = sexo;
 	}
 
-	public Pessoa(String nome, String endereço, String telefone) {
-		this.nome = nome;
-		this.endereço = endereço;
-		this.telefone = telefone;
-	}
-	
 	//seletores
 	public String getNome() {
 		return nome;
@@ -31,19 +29,19 @@ public class Pessoa {
 		this.nome = nome;
 	}
 
-	public String getEndereço() {
-		return endereço;
+	public int getAnoNascimento() {
+		return anoNascimento;
 	}
 
-	public void setEndereço(String endereço) {
-		this.endereço = endereço;
+	public void setAnoNascimento(int anoNascimento) {
+		this.anoNascimento = anoNascimento;
 	}
 
-	public String getTelefone() {
-		return telefone;
+	public char getSexo() {
+		return sexo;
 	}
 
-	public void setTelefone(String telefone) {
-		this.telefone = telefone;
-	}
+	public void setSexo(char sexo) {
+		this.sexo = sexo;
+	}	
 }

@@ -38,9 +38,5 @@ public class ContaBancaria {
 	public double debite (double debito) {
 		saldo = saldo - debito;
 		return this.saldo;
-	}	
-	
-	public static void limpaTela() {
-		for (int x = 0; x < 50; x++) System.out.println();
 	}
 }
