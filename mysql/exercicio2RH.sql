@@ -51,12 +51,12 @@ insert into tb_funcionario values ('5', 'Hadassa Luana da Luz', '1952-12-11', '5
 
 #Faça um select que retorne os funcionários com o salário maior do que 2000
 
-select * from tb_funcionario where salario > 2000;
+select * from tb_funcionario inner join tb_cargo on tb_cargo.id_cargo = tb_funcionario.id_cargo where salario > 2000;
 
 #Faça um select trazendo  os funcionários com salário entre 1000 e 2000
 
-select * from tb_funcionario where salario between 1000 and 2000;
+select * from tb_funcionario inner join tb_cargo on tb_cargo.id_cargo = tb_funcionario.id_cargo where salario > 2000;
 
 #Faça um select  utilizando LIKE buscando os Funcionários com a letra C
 
-select * from tb_funcionario where nome like 'C%';
+select * from tb_funcionario inner join tb_cargo on tb_cargo.id_cargo = tb_funcionario.id_cargo where nome like 'C%';
